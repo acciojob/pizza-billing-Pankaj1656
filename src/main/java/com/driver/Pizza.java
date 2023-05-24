@@ -17,7 +17,7 @@ public class Pizza {
     private int myToppingsPrice=0;
     private int basePrice=0;
     private Boolean BillCreated=false;
-
+   private boolean isBillingDone=false;
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         this.basePrice=isVeg?vegPizzaBasePrice:NonVegPizzaBasePrice;
@@ -77,18 +77,21 @@ public class Pizza {
 //        Extra Toppings Added: 70
 //        Paperbag Added: 20
 //        Total Price: 470
-        
-         bill="Base Price Of The Pizza:" + this.basePrice+"\n";
-        if(cheeseAdded){
-            bill+="Extra Cheese Added:"+cheesePrice+"\n";
+        if(!isBillingDone){
+            isBillingDone=true;
+            bill="Base Price Of The Pizza:" + this.basePrice+"\n";
+            if(cheeseAdded){
+                bill+="Extra Cheese Added:"+cheesePrice+"\n";
+            }
+            if(addToppings){
+                bill+="Extra Toppings Added:" + myToppingsPrice+"\n";
+            }
+            if(paperBag){
+                bill+="Paperbag Added:" + takeAwayPrice +"\n";
+            }
+            bill+="Total price:" +this.price+ "\n";
         }
-        if(addToppings){
-            bill+="Extra Toppings Added:" + myToppingsPrice+"\n";
-        }
-        if(paperBag){
-            bill+="Paperbag Added:" + takeAwayPrice +"\n";
-        }
-        bill+="Total price:" +this.price+ "\n";
+
         return this.bill;
     }
 }
