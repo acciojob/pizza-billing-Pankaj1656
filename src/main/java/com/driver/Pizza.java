@@ -79,17 +79,17 @@ public class Pizza {
 //        Total Price: 470
         if(!isBillingDone){
             isBillingDone=true;
-            bill="Base Price Of The Pizza:" + this.basePrice+"\n";
+            bill="Base Price Of The Pizza: " + this.basePrice+"\n";
             if(cheeseAdded){
-                bill+="Extra Cheese Added:"+cheesePrice+"\n";
+                bill+="Extra Cheese Added: "+cheesePrice+"\n";
             }
             if(addToppings){
-                bill+="Extra Toppings Added:" + myToppingsPrice+"\n";
+                bill+="Extra Toppings Added: " + myToppingsPrice+"\n";
             }
             if(paperBag){
-                bill+="Paperbag Added:" + takeAwayPrice +"\n";
+                bill+="Paperbag Added: " + takeAwayPrice +"\n";
             }
-            bill+="Total price:" +this.price+ "\n";
+            bill+="Total price: " +this.price+ "\n";
         }
 
         return this.bill;
